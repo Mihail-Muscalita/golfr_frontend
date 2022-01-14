@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const CONFIRM_MESSAGE = 'Are you sure you want to delete the score?'
 
-const ScoreCard = ({ id, playedAt, totalScore, userId, userName, showUserLink = false }) => {
+const ScoreCard = ({ id, playedAt, totalScore, userId, userName, showUserLink = true }) => {
   const { deleteScore } = useScoreDelete(id)
 
   return (
@@ -15,14 +15,14 @@ const ScoreCard = ({ id, playedAt, totalScore, userId, userName, showUserLink = 
           {playedAt}
         </div>
         <div>
-          {!showUserLink &&
+          {showUserLink &&
             <Link href={`/golfers/${userId}`}>
               <a>
-                {`${userName} : `}
+                {`${userName}`}
               </a>
             </Link>
           }
-          {`${userName} posted a score of ${totalScore}`}
+          {` posted a score of ${totalScore}`}
         </div>
       </div>
       <div className="w-1/6">

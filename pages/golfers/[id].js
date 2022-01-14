@@ -39,7 +39,7 @@ const GolferPage = () => {
                 playedAt={score.played_at}
                 userId={score.user_id}
                 userName={user.name}
-                showUserLink={true}
+                showUserLink={false}
               />
             ))}
           </>
